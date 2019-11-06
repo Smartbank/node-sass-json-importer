@@ -35,8 +35,7 @@ export default function(options = {}) {
       const json = Array.isArray(fileContents) ? { [extensionlessFilename]: fileContents } : fileContents;
 
       return {
-        contents: transformJSONtoSass(json),
-        file: fileName,
+        contents: transformJSONtoSass(json)
       };
     } catch(error) {
       return new Error(`node-sass-json-importer: Error transforming JSON/JSON5 to SASS. Check if your JSON/JSON5 parses correctly. ${error}`);
